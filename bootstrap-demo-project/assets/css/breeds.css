@@ -1,0 +1,12 @@
+.breeds__card {
+  height: 100%;
+}
+
+.breeds__card .card-body {
+  display: flex;;
+  flex-direction: column;
+}
+
+.breeds__card .card-text {
+  flex-grow: 1;
+}

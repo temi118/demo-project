@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Haven</title>
+  <!-- This adds everything Bootstrap components need to our page  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/introduction.css">
+  <link rel="stylesheet" href="./assets/css/breeds.css">
+  <link rel="stylesheet" href="./assets/css/cat-carousel.css">
+</head>
+<body>
+  <!-- Navigation bar starts here - it uses Navbar -->
+  <!--
+    In order to make navbar stick to the top I used sticky-top class.
+    More information about different positioning modes is available here - https://getbootstrap.com/docs/4.5/utilities/position/
+  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!--
+      sr-only class allows us to create text which is not visible, but adds more context for people with various impairments who navigate pages using special assistive technologies. It is always worth looking at your page and asking yourself would you understand what it is about if you didn't have any images on? What about links 
+    -->
+    <a class="navbar-brand" href="#introduction">🐈 <span class="sr-only">(Welcome to the Cat Haven)</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Breeds
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#domesticated">Domesticated</a>
+            <a class="dropdown-item" href="#">Wild</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Imaginary 🌈</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Adoption centers</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <div class="input-group mr-sm-2">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+        </div>
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </nav>
+  <!-- Navigation bar ends here -->
+
+  <main>
+      <!-- Introduction section starts here - it uses Jumbotronn with custom styling -->
+      <div class="jumbotron text-center text-light introduction" id="introduction">
+        <h1 class="display-4">Welcome to the <b>Cat Haven</b>!</h1>
+        <p class="lead">This page is dedicated to everything cat!</p>
+        <hr class="my-4 border-light introduction__divider">
+        <p>They are truly magical creatures but did you know that you are sharing your home with a predator?</p>
+        <a class="btn btn-outline-info btn-md"  target="_blank" href="https://www.nationalgeographic.com/news/2016/11/cats-lion-living-room-abigail-tucker/">
+          Learn more <span class="sr-only">(about cat's true nature)</span>
+        </a>
+      </div>
+      <!-- Introduction section ends here -->
+
+      <!-- Breeds section starts here -->
+      <section id="breeds">
+        <!-- 
+          Breeds introduction section starts here - it uses Bootstrap utility classes for styling:
+
+          - text-light and other available colors can be found here - https://getbootstrap.com/docs/4.5/utilities/colors/
+          - p-3, my-4 and other spacing classes can be found here - https://getbootstrap.com/docs/4.5/utilities/spacing/
+          - text-center and other positioning classes can be found here - https://getbootstrap.com/docs/4.5/utilities/text/
+
+          Styling for headings and paragraphs is applied automatically but can be found here - https://getbootstrap.com/docs/4.5/content/typography/
+         -->
+        <div class="section-introduction text-light p-3">
+          <h2 class="text-center">Cat Breeds</h2>
+          <p class="text-center my-4">
+            Cats come in all shapes and sized but broadly they are divided into 3 distinct groups: <b>domesticated</b>, <b>wild</b> and <b>imaginary</b>. Lets look at each of them in turn!
+          </p>
+        </div>
+        <!-- Breeds introduction section end here -->
+
+        <h3 id="domesticated" class="text-center my-3">Domesticated</h3>
+        <!--
+          Grid of cards for each breed starts here - it uses grid and Cards component
+
+          Grids can be made responsive (adapt to the size of the screen). For this they use common screen sizes to change themselves. These are coded into Bootstrap using abbreviations - https://getbootstrap.com/docs/4.5/layout/grid/#grid-options
+
+          Grid has 12 columns available, so when defining how wide our card should be we say how many columns it should span. With this in mind "col-sm-12 col-md-6 col-lg-4" actually means:
+          - col-sm-12 - on the small screens please stretch yourself across all 12 columns, aka become full width;
+          - col-md-6 - on the medium screens please stretch yourself only across 6 columns, aka become half width
+          - col-lg-4 - on the large screens please stretch yourself across 4 columns, aka become third of the width
+        -->
+        <div class="container">
+          <div class="row">
+
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+              <!-- Breed card begins here - it uses Card -->
+              <div class="card breeds__card">
+                <img src="./assets/images/breeds/domesticated/ragdoll.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">Ragdoll</h4>
+                  <p class="card-text">The Ragdoll cat is possibly the most laid back of all the domestic cat breeds. These cats are basically content and undemanding and tolerate most situations.</p>
+                  <a target="_blank" href="https://www.hillspet.com/cat-care/cat-breeds/ragdoll" class="btn btn-info">
+                    Read more
+                    <span class="sr-only">(about ragdoll breed)</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Breed card ends here -->
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+              <!-- Breed card begins here - it uses Card -->
+              <div class="card breeds__card">
+                <img src="./assets/images/breeds/domesticated/abissinian.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">Abyssinian</h4>
+                  <p class="card-text">The Abyssinian cat is quiet, intelligent and curious and is said to enjoy human company and become attached to its family.</p>
+                  <a target="_blank" href="https://www.hillspet.com/cat-care/cat-breeds/abyssinian" class="btn btn-info">Read more</a>
+                </div>
+              </div>
+              <!-- Breed card ends here -->
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+              <!-- Breed card begins here - it uses Card -->
+              <div class="card breeds__card">
+                <img src="./assets/images/breeds/domesticated/domestic-shorthaired.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h4 class="card-title">Domestic Shorthair</h4>
+                  <p class="card-text">Animal Planet affectionately refers to Domestic shorthair cats as the mutts of the cat world because they're a mix of various breeds, resulting in a vast range of markings, colors, and personalities.</p>
+                  <a target="_blank" href="https://www.hillspet.com/cat-care/cat-breeds/domestic-shorthair" class="btn btn-info">Read more</a>
+                </div>
+              </div>
+              <!-- Breed card ends here -->
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- Breeds section ends here -->
+
+      <!-- Gallery section starts here -->
+      
+      <!-- Gallery section ends here -->
+  </main>
+</body>
+</html>

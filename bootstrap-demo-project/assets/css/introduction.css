@@ -1,0 +1,11 @@
+.introduction {
+  background-image: url(../images/landing.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.introduction__divider {
+  opacity: 0.2;
+}
